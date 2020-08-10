@@ -1,0 +1,83 @@
+Steps to setup git with local system
+--------------------------------------
+Install git in the local linux system:-
+---------------------------------------
+	# Start by updating the package index:
+
+1.    sudo apt update
+
+        # Run the following command to install Git:
+
+2.    sudo apt install git
+
+        # Verify the installation by typing the following command which will print the Git version:
+
+3.    git --version
+
+        # At the time of writing this article, the current version of Git available in the Ubuntu 18.04 repositories is 2.17.1.
+
+4.    git version 2.17.1
+
+       # That’s it, you have successfully installed Git on your Ubuntu and you can start using it.
+
+
+Configure git in the system.
+----------------------------
+
+1. git config --global user.name "Your Name"
+2. git config --global user.email "youremail@yourdomain.com"
+
+# To verify the configuration changes, type:
+
+3. git config --list
+
+# The output should look something like this:
+
+4. user.name=Your Name
+5. user.email=youremail@yourdomain.com
+
+# The configuration settings are stored in the ~/.gitconfig file:
+~/.gitconfig
+
+[user]
+    name = Your Name
+    email = youremail@yourdomain.com
+--------------------------------------------------------------------
+Interaction between git hub(project on local) and git hub account
+------------------------------------------------------------------
+1. Create a new repository on GitHub.
+   # To avoid errors, do not initialize the new repository with README, license, 
+   or gitignore files. You can add these files after your project has been pushed to GitHub.
+
+2. Create New Repository drop-down
+3. Open Terminal.
+   # Change the current working directory to your local project.
+   # Initialize the local directory as a Git repository.
+
+4. $ git init
+
+   # Add the files in your new local repository. This stages them for the first commit.
+
+5. $ git add .
+   # Adds the files in the local repository and stages them for commit. To unstage a file, use 'git reset HEAD YOUR-FILE'.
+
+   # Commit the files that you've staged in your local repository.
+
+6. $ git commit -m "First commit"
+   # Commits the tracked changes and prepares them to be pushed to a remote repository. 
+     To remove this commit and modify the file, use 'git reset --soft HEAD~1' and commit and add the file again.
+
+   # At the top of your GitHub repository's Quick Setup page, click to copy the remote repository URL.
+   # Copy remote repository URL field (https://)
+
+7. $ git remote add origin remote repository URL
+   # Sets the new remote
+8. $ git remote -v
+   # Verifies the new remote URL
+
+9. git push origin master
+   # Pushes the changes in your local repository up to the remote repository you specified as the origin 
+
+
+that it.. the end...........:)
+---------------------------------------------------------------------------------------------------------------
